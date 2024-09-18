@@ -1,34 +1,49 @@
-import numpy as np
+import math
 
-def newtons_method(f, f_prime, x0, tol=1e-7, max_iter=1000): # tol: tolerance for convergence
+def f(x):
+    return x**4 + x - 4
+    #return 5 * x**3 + 5 * x**2 + 4
+    #return math.exp(x) - 5.5 * x
+    #return math.exp(3 * x) + 5 * x - 2
+    #return 3 * math.sin(x) - x
+    #return x**3 + x + 2
+
+def f_prime(x):
+    return 4 * x**3 + 1
+    #return 15 * x**2 + 10 * x
+    #return math.exp(x) - 5.5
+    #return 3 * math.exp(3 * x) + 5
+    #return 3 * math.cos(x) - 1
+    #return3 * x**2 + 1
+
+x0 = 0/5
+
+def newtons_method(x0, tolerance=1e-6, max_iterations=100):
+    x_n = x0
+    for n in range(max_iterations):
+        f_xn = f(x_n)
+        f_prime_xn = f_prime(x_n)
+        
+        if abs(f_prime_xn) < 1e-10:
+            print("Derivative too small. Stopping iteration.")
+            return None
+        
+        x_n1 = x_n - f_xn / f_prime_xn
+        
+        print(f"Iteration {n+1}: x = {x_n1:.6f}, f(x) = {f(x_n1):.6f}")
+        
+        # Check if the result is within the tolerance level
+        if abs(x_n1 - x_n) < tolerance:
+            return x_n1
+        
+        x_n = x_n1
     
-    x = x0
-    for i in range(max_iter):
-        fx = f(x)
-        fpx = f_prime(x)
-        
-        if fpx == 0:
-            print("Derivative is zero. No solution found.")
-            return None, i
-        
-        # Update using Newton's method formula
-        x_new = x - fx / fpx
-        
-        # Check if the update is within tolerance
-        if abs(x_new - x) < tol:
-            return x_new, i + 1
-        
-        x = x_new
-    
-    print("Maximum number of iterations reached. Solution may not have converged.")
-    return x, max_iter
+    print("Max iterations reached without convergence.")
+    return None
 
-f = lambda x: x**2 - 2
-f_prime = lambda x: 2*x
-
-x0 = 1.0
-
-approximate_root, iterations = newtons_method(f, f_prime, x0)
+root = newtons_method(x0)
 
 if root is not None:
-    print(f"Root found: {approximate_root} in {iterations} iterations.")
+    print(f"\nThe root is approximately x = {root:.6f}")
+else:
+    print("\nNewton's method did not converge.")
