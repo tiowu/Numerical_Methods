@@ -3,5 +3,5 @@
 <p>
 <b>Algorithms to find approximate solutions to mathematical problems </b>
 
-Code includes numerical solutions of nonlinear equations by iteration, interpolation and polynomial
+Topics include numerical solutions of nonlinear equations by iteration, interpolation and polynomial
 approximation, numerical differentiation and integration.
