@@ -1,22 +1,24 @@
 import math
 
+import math
+
 def f(x):
-    return x**4 + x - 4
-    #return 5 * x**3 + 5 * x**2 + 4
-    #return math.exp(x) - 5.5 * x
-    #return math.exp(3 * x) + 5 * x - 2
-    #return 3 * math.sin(x) - x
-    #return x**3 + x + 2
-    #return x**2 - 7 * x + 10  
+    return math.sin(x) - 0.5 * x  # New sine function
+    # return x**4 + x - 4
+    # return 5 * x**3 + 5 * x**2 + 4
+    # return math.exp(x) - 5.5 * x
+    # return math.exp(3 * x) + 5 * x - 2
+    # return x**3 + x + 2
+    # return x**2 - 7 * x + 10  
 
 def f_prime(x):
-    return 4 * x**3 + 1
-    #return 15 * x**2 + 10 * x
-    #return math.exp(x) - 5.5
-    #return 3 * math.exp(3 * x) + 5
-    #return 3 * math.cos(x) - 1
-    #return 3 * x**2 + 1
-    #return 2 * x - 7  
+    return math.cos(x) - 0.5  # Derivative of sin(x) - 0.5 * x
+    # return 4 * x**3 + 1
+    # return 15 * x**2 + 10 * x
+    # return math.exp(x) - 5.5
+    # return 3 * math.exp(3 * x) + 5
+    # return 3 * x**2 + 1
+    # return 2 * x - 7  
 
 x0 = 0/5
 
