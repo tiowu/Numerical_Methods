@@ -1,9 +1,8 @@
 import math
 
-import math
-
 def f(x):
     return math.sin(x) - 0.5 * x  
+    # return math.sqrt(math.cos(x)) - x  
     # return math.tan(x) - 2 * x 
     # return 5 * x**3 + 5 * x**2 + 4
     # return math.exp(x) - 5.5 * x
@@ -13,6 +12,7 @@ def f(x):
 
 def f_prime(x):
     return math.cos(x) - 0.5  
+    # return -0.5 * math.sin(x) / math.sqrt(math.cos(x)) - 1 
     # return 1 / math.cos(x)**2 - 2 
     # return 15 * x**2 + 10 * x
     # return math.exp(x) - 5.5
