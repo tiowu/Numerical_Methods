@@ -42,12 +42,12 @@ def newtons_method(x0, tolerance=1e-6, max_iterations=100):
         
         x_n = x_n1
     
-    print("Max iterations reached without convergence.")
+    print("no convergence upon hitting max number of iterations")
     return None
 
 approximate_root = newtons_method(x0)
 
 if approximate_root is not None:
-    print(f"\nThe root is approximately x = {approximate_root:.6f}")
+    print(f"\nroot is approximately x = {approximate_root:.6f}")
 else:
-    print("\nNewton's method did not converge.")
+    print("\nnewton's method didn't converge")
