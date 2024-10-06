@@ -2,6 +2,7 @@ import math
 
 def g(x):
     return math.sqrt(2 + x)
+    # return 1 / (x + 1) 
 
 def fixed_point_algorithm(x1, max_iterations):
     x_n = x1
