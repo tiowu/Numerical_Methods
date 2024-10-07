@@ -1,7 +1,7 @@
 import math
 
 def g(x):
-    return 2.2 * math.cos(x)
+    return 2.2 * math.cos(x) # |-2.2sin(x)| < 1, then g(x) will converge 
 
 def fixed_point_method(x1, max_iterations, tolerance):
     x_n = x1
@@ -18,8 +18,8 @@ def fixed_point_method(x1, max_iterations, tolerance):
     print("Maximum iterations reached without convergence.")
     return x_n
 
-x1 = 2
-max_iterations = 50
-tolerance = 1e-6
+x1 = 0.001
+max_iterations = 20
+tolerance = 1e-4
 
 fixed_point_method(x1, max_iterations, tolerance)
